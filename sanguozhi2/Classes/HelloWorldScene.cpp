@@ -84,9 +84,48 @@ bool HelloWorld::init()
         return false;
     }
     
+
+    Size winSize = Director::getInstance()->getWinSize();
+    
     auto rootNode = CSLoader::createNode("MainScene.csb");
+    
+     m_pSprite = dynamic_cast<Sprite*>(rootNode->getChildByName("Sprite_1"));
+    // 给按钮添加触摸事件响应
+
+    
+    m_pEnemy = dynamic_cast<Sprite*>(rootNode->getChildByName("Sprite_2"));
+    
+    ///button->setPosition(winSize.width/2,winSize.height/2);
+    m_fAllTime = 0;
 
     addChild(rootNode);
+    
+    this->scheduleUpdate();
+
 
     return true;
+}
+
+void HelloWorld::update(float time)
+{
+    m_fAllTime += time;
+    
+    float xpos= m_pSprite->getPositionX();
+    
+    float xpos2 = m_pEnemy->getPositionX();
+
+     m_pEnemy->setPositionX(xpos2-1);
+
+     m_pSprite->setPositionX(xpos+1);
+    
+     Rect re = m_pEnemy->getBoundingBox();
+    
+    //碰撞检测
+     if(re.containsPoint(m_pSprite->getPosition())){
+    
+         this->unscheduleUpdate();
+         
+     }
+    
+    
 }

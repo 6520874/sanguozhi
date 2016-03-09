@@ -14,6 +14,15 @@ public:
 
     // implement the "static create()" method manually
     CREATE_FUNC(HelloWorld);
+    
+    void  update(float time);
+private:
+    cocos2d::Sprite * m_pSprite;
+    cocos2d::Sprite * m_pEnemy;
+    
+    
+    float m_fAllTime;
+    
 };
 
 #endif // __HELLOWORLD_SCENE_H__
