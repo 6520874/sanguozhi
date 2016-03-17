@@ -6,7 +6,7 @@
       <ObjectData Name="Scene" ctype="GameNodeObjectData">
         <Size X="960.0000" Y="640.0000" />
         <Children>
-          <AbstractNodeData Name="Image_1" ActionTag="-1179193904" Tag="7" IconVisible="False" LeftMargin="-0.5453" RightMargin="0.5453" TopMargin="-9.3167" BottomMargin="9.3166" LeftEage="316" RightEage="316" TopEage="211" BottomEage="211" Scale9OriginX="316" Scale9OriginY="211" Scale9Width="328" Scale9Height="218" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="Image_1" ActionTag="-1179193904" Tag="7" IconVisible="False" LeftMargin="-0.5453" RightMargin="0.5453" TopMargin="-9.3166" BottomMargin="9.3166" LeftEage="316" RightEage="316" TopEage="211" BottomEage="211" Scale9OriginX="316" Scale9OriginY="211" Scale9Width="328" Scale9Height="218" ctype="ImageViewObjectData">
             <Size X="960.0000" Y="640.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="479.4547" Y="329.3166" />
@@ -18,22 +18,22 @@
           </AbstractNodeData>
           <AbstractNodeData Name="Sprite_1" ActionTag="12805001" Tag="10" IconVisible="False" LeftMargin="40.7670" RightMargin="819.2330" TopMargin="403.7275" BottomMargin="136.2725" ctype="SpriteObjectData">
             <Size X="100.0000" Y="100.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="90.7670" Y="186.2725" />
+            <AnchorPoint ScaleX="0.8000" ScaleY="0.5000" />
+            <Position X="120.7670" Y="186.2725" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.0945" Y="0.2911" />
+            <PrePosition X="0.1258" Y="0.2911" />
             <PreSize X="0.1042" Y="0.1563" />
             <FileData Type="Normal" Path="fight/head_gongjian.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="Sprite_2" ActionTag="-1574327394" Tag="12" IconVisible="False" LeftMargin="811.5361" RightMargin="48.4639" TopMargin="399.5737" BottomMargin="140.4263" ctype="SpriteObjectData">
             <Size X="100.0000" Y="100.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="861.5361" Y="190.4263" />
+            <AnchorPoint ScaleX="0.2000" ScaleY="0.5000" />
+            <Position X="831.5361" Y="190.4263" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.8974" Y="0.2975" />
+            <PrePosition X="0.8662" Y="0.2975" />
             <PreSize X="0.1042" Y="0.1563" />
             <FileData Type="Normal" Path="fight/head_kulou.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
