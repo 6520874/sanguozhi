@@ -92,44 +92,28 @@ bool HelloWorld::init()
     
 
     
-    Sprite3D* tempTarget = Sprite3D::create("soldier/soldier.c3b");
+    Sprite3D* tempTarget2 = Sprite3D::create("soldier/soldier.c3b");
     /*Sprite* temp = Sprite::create("fightBG_Snow1Night_1.png");
     temp->getTexture()->setAliasTexParameters();
     temp->setAnchorPoint(Vec2(0.5f, 0.5f));
     temp->setScale(2);
     tempTarget->addChild(temp);*/
-    tempTarget->setForceDepthWrite(true);
+    tempTarget2->setForceDepthWrite(true);
     
-    tempTarget->setScale(10);
+    tempTarget2->setScale(10);
     //tempTarget->setPosition3DZ
     
-    tempTarget->setRotation3D(Vec3(0,100,0));
+    tempTarget2->setRotation3D(Vec3(0,100,0));
     //tempTarget->setCameraMask((unsigned short )CameraFlag::USER1);
-    tempTarget->setPosition(winSize.width*0.5,winSize.height*0.5);
-
-
-
-
-    //tempTarget->setPosition3D(Vec3(temp->getBoundingBox().size.width*0.71,-1,-700));
-    addChild(tempTarget,10);
-    
-    /*auto rootNode = CSLoader::createNode("MainScene.csb");
-    
-     m_pSprite = dynamic_cast<Sprite*>(rootNode->getChildByName("Sprite_1"));
-    // 给按钮添加触摸事件响应
-
-    
-    m_pEnemy = dynamic_cast<Sprite*>(rootNode->getChildByName("Sprite_2"));
+    tempTarget2->setPosition(winSize.width*0.1,winSize.height*0.5);
+    addChild(tempTarget2,10);
 
     
     
-    m_fAllTime = 0;
-
-    addChild(rootNode);
+    Sprite3D* tempTarget = Sprite3D::create("changing.c3b");
+    tempTarget->setPosition3D(Vec3(winSize.width*0.5,winSize.height*0.5,600));
+    addChild(tempTarget);
     
-    this->scheduleUpdate();*/
-
-
     return true;
 }
 
