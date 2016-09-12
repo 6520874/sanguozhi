@@ -87,7 +87,7 @@ bool HelloWorld::init()
 
     Size winSize = Director::getInstance()->getWinSize();
     
-    Sprite3D* tempTarget2 = Sprite3D::create("soldier/soldier.c3b");
+    m_pSoldier = Sprite3D::create("soldier/soldier.c3b");
     /*Sprite* temp = Sprite::create("fightBG_Snow1Night_1.png");
     temp->getTexture()->setAliasTexParameters();
     temp->setAnchorPoint(Vec2(0.5f, 0.5f));
@@ -95,11 +95,11 @@ bool HelloWorld::init()
     tempTarget->addChild(temp);*/
     //tempTarget2->setForceDepthWrite(true);
     
-    tempTarget2->setScale(10);
-    tempTarget2->setRotation3D(Vec3(0,100,0));
+    m_pSoldier->setScale(10);
+    m_pSoldier->setRotation3D(Vec3(0,100,0));
     //tempTarget->setCameraMask((unsigned short )CameraFlag::USER1);
-    tempTarget2->setPosition(winSize.width*0.1,winSize.height*0.5);
-    addChild(tempTarget2,10);
+    m_pSoldier->setPosition(winSize.width*0.1,winSize.height*0.5);
+    addChild(m_pSoldier,10);
 
     Sprite3D* tempTarget = Sprite3D::create("changing.c3b");
     //tempTarget->setPositionZ(-100);
@@ -111,20 +111,24 @@ bool HelloWorld::init()
     auto animation = Animation3D::create("soldier/soldier.c3b");
     if (animation)
     {
-        auto animate = Animate3D::create(animation,1,120);
+        auto animate = Animate3D::create(animation,1.42,1.425);
         cocos2d::Action* _swim = RepeatForever::create(animate);
-        tempTarget2->runAction( _swim);
+        m_pSoldier->runAction( _swim);
     
     }
 
     
     
+    scheduleUpdate();
     
     return true;
 }
 
 void HelloWorld::update(float time)
 {
+    
+    
+    m_pSoldier->setPositionX(m_pSoldier->getPositionX()+1);
     /*m_fAllTime += time;
     
     float xpos= m_pSprite->getPositionX();

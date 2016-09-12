@@ -17,9 +17,9 @@ public:
     
     void  update(float time);
 private:
-    cocos2d::Sprite * m_pSprite;
-    cocos2d::Sprite * m_pEnemy;
-    
+
+    cocos2d::Sprite3D * m_pSoldier;
+
     
     float m_fAllTime;
     
