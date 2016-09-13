@@ -88,34 +88,34 @@ bool HelloWorld::init()
     Size winSize = Director::getInstance()->getWinSize();
     
     m_pSoldier = Sprite3D::create("soldier/soldier.c3b");
-    /*Sprite* temp = Sprite::create("fightBG_Snow1Night_1.png");
-    temp->getTexture()->setAliasTexParameters();
-    temp->setAnchorPoint(Vec2(0.5f, 0.5f));
-    temp->setScale(2);
-    tempTarget->addChild(temp);*/
-    //tempTarget2->setForceDepthWrite(true);
-    
     m_pSoldier->setScale(10);
     m_pSoldier->setRotation3D(Vec3(0,100,0));
-    //tempTarget->setCameraMask((unsigned short )CameraFlag::USER1);
     m_pSoldier->setPosition(winSize.width*0.1,winSize.height*0.5);
     addChild(m_pSoldier,10);
 
+
     Sprite3D* tempTarget = Sprite3D::create("changing.c3b");
-    //tempTarget->setPositionZ(-100);
     tempTarget->setPosition3D(Vec3(winSize.width*0.5,winSize.height*0.5,200));
     addChild(tempTarget);
-
     
     
     auto animation = Animation3D::create("soldier/soldier.c3b");
-    if (animation)
-    {
-        auto animate = Animate3D::create(animation,1.42,1.425);
-        cocos2d::Action* _swim = RepeatForever::create(animate);
-        m_pSoldier->runAction( _swim);
+    auto animate = Animate3D::create(animation,125.0/60,45.0/60);
+    cocos2d::Action* _swim = RepeatForever::create(animate);
+     m_pSoldier->runAction( _swim);
+
     
-    }
+    m_pGuaiwu =  Sprite3D::create("shouren/shouren.c3b");
+    m_pGuaiwu->setScale(10);
+    m_pGuaiwu->setRotation3D(Vec3(0,-100,0));
+    m_pGuaiwu->setPosition(winSize.width*0.9,winSize.height*0.5);
+    addChild(m_pGuaiwu,10);
+    
+    
+    animation = Animation3D::create("shouren/shouren.c3b");
+    animate = Animate3D::create(animation,125.0/60,45.0/60);
+    cocos2d::Action*  action= RepeatForever::create(animate);
+    m_pGuaiwu->runAction(action);
 
     
     
@@ -126,26 +126,7 @@ bool HelloWorld::init()
 
 void HelloWorld::update(float time)
 {
-    
-    
     m_pSoldier->setPositionX(m_pSoldier->getPositionX()+1);
-    /*m_fAllTime += time;
     
-    float xpos= m_pSprite->getPositionX();
-    
-    float xpos2 = m_pEnemy->getPositionX();
-
-     m_pEnemy->setPositionX(xpos2-1);
-
-     m_pSprite->setPositionX(xpos+1);
-    
-     Rect re = m_pEnemy->getBoundingBox();
-    
-    //碰撞检测
-     if(re.containsPoint(m_pSprite->getPosition())){
-    
-         this->unscheduleUpdate();
-         
-     }*/
-    
+    m_pGuaiwu->setPositionX(m_pGuaiwu->getPositionX()-1);
 }

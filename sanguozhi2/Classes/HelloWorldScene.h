@@ -19,6 +19,8 @@ public:
 private:
 
     cocos2d::Sprite3D * m_pSoldier;
+    cocos2d::Sprite3D * m_pGuaiwu;
+    
 
     
     float m_fAllTime;
